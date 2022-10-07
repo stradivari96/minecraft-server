@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      VIEW_DISTANCE: 16
+      OVERRIDE_SERVER_PROPERTIES: "true"
+      OPS: "FrenFrenBurger"
+      MEMORY: "4G"
+      DIFFICULTY: "hard"
+      SPAWN_PROTECTION: 0
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - ./minecraft-data:/data
+ 
